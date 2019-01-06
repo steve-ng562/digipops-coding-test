@@ -2,7 +2,7 @@
   "name": "digipopstest",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://stevejng.com/digipops-coding-test",
+  "homepage": "https://steve-ng562.github.io/digipops-coding-test",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "firebase": "^5.7.2",

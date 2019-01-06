@@ -23,14 +23,20 @@ class App extends Component {
   
 
   componentDidMount() { 
-    let currentComponent = this;
+  
+    this.readFilms();
+    this.readTotal();
+   
+
+    }
+
+    readTotal = () => {
+        let currentComponent = this;
 
     const db = firebase.firestore();
-    var totalRef = db.collection("total").doc("total");
-    var filmsRef = db.collection("films");
+          var totalRef = db.collection("total").doc("total");
 
-    this.readFilms();
-    //read total number of films from firestore
+      //read total number of films from firestore
     totalRef.get().then(function(doc){
       if(doc.exists) {
         console.log("Document data: ", doc.data());
@@ -47,9 +53,7 @@ class App extends Component {
     console.log("Error getting document:", error);
 
     });
-
     }
-
   addHandler = () => {
     let currentComponent = this;
     const db = firebase.firestore();
@@ -67,6 +71,7 @@ class App extends Component {
     console.error("Error adding document: ", error);
 });
 this.readFilms();
+this.readTotal();
 
 
 
@@ -83,6 +88,7 @@ this.readFilms();
     });
 
     this.readFilms();
+    this.readTotal();
     }
   
 
